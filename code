@@ -1,0 +1,555 @@
+                                   WEBSITE FOR AN ACADEMY
+ABOUT PAGE FOR A WEBSITE
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .project {
+            min-height: 100vh;
+            width: 100%;
+            background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("SCO.jpg");
+            background-position: center;
+            background-size: cover;
+            position: relative
+        }
+
+        h1 {
+            text-align: center;
+            color: hwb(0 3% 94%);
+        }
+
+        p {
+            text-align: center;
+        }
+
+        nav {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            padding: 3% 5%;
+            color: #011c13;
+            background-image: url("SCO.jpg");
+            background-size: cover;
+        }
+
+        nav img {
+            width: 100px;
+            float: left;
+        }
+
+        .nav-links {
+            flex: auto;
+            text-align: right;
+            /* Align text to the right */
+            color: aquamarine;
+        }
+
+        nav ul {
+            list-style-type: none;
+            color: aqua
+                /* Remove bullet points from list */
+        }
+
+        nav ul li {
+            display: inline-block;
+            padding: 8px 12px;
+            color: aquamarine;
+        }
+
+        .nav-links ul li a {
+            color: hsl(0, 65%, 93%);
+            text-decoration: none;
+            font-size: 13px;
+            text-align: right;
+        }
+
+        .html {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-links">
+            <ul>
+                <li><a href="kk.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="courses.html">COURSES</a></li>
+                <li><a href="#">SERVICES</a></li>
+                <li><a href="#">CONTACTS</a></li>
+            </ul>
+            <img src="logo.jpg">
+        </div>
+    </nav>
+    <h1 style="background-color: hwb(110 74% 2%);">OUR MISSION</h1>
+    <p>
+        The AIM (Analyze, Innovate, and Model) Academy is an innovative educational program that provides students with
+        authentic academic opportunities.
+        Students will use the Engineering Process to analyze, model, and create solutions to real-world problems.</p>
+    <h1 style="background-color: hsl(156, 86%, 49%);">OUR VISSION</h1>
+    <p> "To become one of the world's leading companies, bringing innovations to improve the way the world works and
+        lives," is a compelling testament to the company's ambitions.</p>
+
+    <h1 style="background-color: hwb(145 1% 87% / 0.177);">MEET OUR TEAM MEMBERS</h1>
+    <section class="html">
+        <div class="team member">
+            <img src="em1.jpg">
+            <h3>JOHN</h3>
+        </div>
+        <div class="team member">
+            <img src="em2.jpg">
+            <h3>HARRY</h3>
+        </div>
+        <div class="team member">
+
+            <img src="em3,jpg.jpg">
+            <h3>HENDRY</h3>
+        </div>
+        <div class="team member">
+
+            <img src="em4.jpg">
+            <h3>JACK</h3>
+        </div>
+        <div class="team members"></div>
+    </section>
+</body>
+</html>
+
+
+LOGIN PAGE FOR A WEBSITE
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            background: whitesmoke;
+            padding: 20px;
+            border-radius: 8px;
+            max-height: fit-content;
+            width: 100%;
+            max-width: 400px;
+            align-items: center;
+        }
+        input[type="text"],
+        input[type="textarea"],
+        select,
+        option {
+            width: 90%;
+            padding: 10px 0 5px;
+            margin: 5px 0 10px;
+            border: 1px solid black;
+            border-radius: 4px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0px 5px;
+        }
+
+        button {
+            display: inline-block;
+            text-decoration: none;
+            color: hsl(0, 62%, 78%);
+            border: 1px solid #0fa3e2;
+            padding: 12px 34px;
+            background-color: #fff;
+            cursor: pointer;
+            margin-top: 20px;
+            width: 100%;
+            text-align: center;
+
+        }
+    </style>
+</head>
+<body background="img.gif">
+    <form id="LOGIN FORM" action="one.html">
+        <h1>REGISTRATION FORM</h1>
+        <label for="NAME">NAME:</label>
+        <input type="TEXT" id="name"><br> <br>
+        <label for="GENDER">GENDER:</label>
+        <select id="gender" Name="gender">
+            <option value="male">MALE</option>
+            <option value="female">FEMALE</option>
+            <option value="other">OTHER</option>
+        </select> <br> <br>
+        <label for="COURSES OFFERED">COURSES OFFERED:</label>
+        <select id="Courses Offered" Name="Courses">
+            <option value="AI/ML">AI/ML</option>
+            <option value="WEB DEVELOPMENT">WEB DEVELOPMENT</option>
+            <option value="ROBOTICS">ROBOTICS</option>
+            <option value="ELECTRONICS COURSES">ELECTRONICS</option>
+            <option value="NETWORKING">NETWORKING</option>
+        </select> <br> <br>
+     <label for="school">NAME OF THE SCHOOL:</label>
+        <input type="TEXT" id="name"><br> <br>
+        <label for="college">NAME OF THE COLLEGE:</label>
+        <input type="TEXT" id="name"><br> <br>
+        <label for="address">ADDRESS:</label>
+        <input type="text" id="txt">
+        <button>SUBMIT</button>
+</form>
+</body>
+</html>
+
+COURSES OFFERED PAGE FOR A WEBSITE
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            text-align: center;
+            color: hsl(196, 100%, 2%)
+        }
+
+        p {
+            text-align: center;
+            color: hwb(0 0% 99%);
+            font-size: smaller;
+        }
+
+        h1,
+        p,
+        button {
+            text-align: center;
+        }
+
+        nav {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            padding: 3% 5%;
+            color: #011c13;
+            background-image: url("SCO.jpg");
+            background-size: cover;
+        }
+
+        img {
+            float: inherit;
+        }
+
+        nav img {
+            width: 100px;
+            float: left;
+        }
+
+        .nav-links {
+            flex: 1;
+            text-align: right;
+
+
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: inline-block;
+            padding: 0px 12px;
+            position: relative;
+        }
+
+        nav ul li {
+            display: inline-block;
+            list-style: none;
+            padding: 8px 12px;
+            position: relative
+        }
+
+        .nav-links ul li a {
+            color: hsl(0, 35%, 92%);
+            text-decoration: none;
+            font-size: 13px;
+            text-align: right;
+        }
+
+        .html {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .courses {
+
+            border-radius: 8px;
+            margin: 2rem 1rem;
+            justify-content: space-between;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        h3 {
+            color: #011c13;
+        }
+
+        p {
+            font-style: italic;
+        }
+
+        .bor {
+            border: 2px hwb(0 0% 98%) solid;
+        }
+
+        section {
+            display: flex;
+        }
+        h1{
+            color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-links">
+            <ul>
+                <li><a href="kk.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="courses.html">COURSES</a></li>
+                <li><a href="service.html">SERVICES</a></li>
+                <li><a href="contact.html">CONTACTS</a></li>
+            </ul>
+            <img src="logo.jpg">
+
+        </div>
+    </nav>
+    <h1 style="background-color: hsl(87, 92%, 15%);">OUR COURSES</h1>
+    <section>
+        <section class="html">
+            <div class="bor">
+                <div class="courses">
+                    <img src="cou.jpg" height="200px" width="300px">
+                    <h3>INTRODUCTION TO IOT</h3>
+                    <p> “ Everything that can be automated will be automated.” </p>
+        </section>
+        </div>
+        </div>
+        <section>
+            <div class="bor">
+                <div class="courses">
+                    <img src="ro.jpg" height="200px" width="300px">
+                    <h3>AUTOMATION</h3>
+                    <p>Automation is the application of technology, programs,to achieve outcomes with minimal human
+                        input.</p>
+                </div>
+        </section>
+        </div>
+        <div class="bor">
+            <div class="courses">
+                <img src="el.jpg" height="200px" width="300px">
+                <h3>SMART AUTOMATION</h3>
+                <p>There's a lot of automation that can happen that isn't a replacement of humans,<br> but of
+                    mind-numbing behavior.</p>
+            </div>
+        </div>
+        <section>
+            <div class="bor">
+                <div class="courses">
+                    <img src="web.jpg" height="200px" width="300px">
+                    <h3>WEB DEVELOPMENT</h3>
+                    <p>“Great web design without functionality is like a sports car with no engine.”</p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="bor">
+                <div class="courses">
+                    <img src="u.jpg" height="200px" width="300px">
+                    <h3>UI/UX</h3>
+                    <p>“Design isn't finished until somebody is using it.”</p>
+                </div>
+            </div>
+        </section>
+    </section>
+</body>
+
+</html>
+
+CONTACT PAGE FOR A WEBSITE
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .project {
+            min-height: 100vh;
+            width: 100%;
+            background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("SCO.jpg");
+
+            background-position: center;
+            background-size: cover;
+            position: relative
+        }
+
+        h1 {
+            text-align: center;
+            color: rgb(0, 8, 10)
+        }
+
+        p {
+            text-align: center;
+            color: rgb(16, 13, 13);
+        }
+
+        h1,
+        p,
+        button {
+            text-align: center;
+        }
+
+        nav {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            padding: 3% 5%;
+            color: #011c13;
+            background-image: url("SCO.jpg");
+            background-size: cover;
+        }
+
+        nav img {
+            width: 100px;
+            float: left;
+        }
+
+        .nav-links {
+            flex: 1;
+            text-align: right;
+
+
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: inline-block;
+            padding: 0px 12px;
+            position: relative;
+        }
+
+        nav ul li {
+            display: inline-block;
+            list-style: none;
+            padding: 8px 12px;
+            position: relative
+        }
+
+        .nav-links ul li a {
+            color: rgb(240, 227, 227);
+            text-decoration: none;
+            font-size: 13px;
+            text-align: right;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        h1,
+        h2,
+        h3 {
+            text-align: center;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        button {
+            display: inline-block;
+            text-decoration: none;
+            color: #031312;
+            border: 1px solid #0fa3e2;
+            padding: 12px 34px;
+            background-color: #fff;
+            cursor: pointer;
+            margin-top: 20px;
+            align-items: center;
+
+        }
+    </style>
+</head <body>
+<nav>
+    <div class="nav-links">
+        <ul>
+            <li><a href="kk.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="courses.html">COURSES</a></li>
+            <li><a href="service.html">SERVICES</a></li>
+            <li><a href="contact.html">CONTACTS</a></li>
+        </ul>
+        <img src="logo.jpg">
+    </div>
+</nav>
+<h1 style="background-color: #2b4e42;">CONTACT US</h1>
+<main>
+    <h1>ADDRESS</h1>
+    <h3>1-180 XXXX 629-156 TN</h3>
+    <h2>CONTACT NUMBERS</h2>
+    <h3>9173268293</h3>
+    <h3>6373783892</h3>
+    <h3>Academy@gmail.com</h3>
+    <fieldset>
+        <h1 style="background-color: rgb(47, 91, 91);">CONTACT FORM</h1>
+        <form action="two.html">
+            <label for="NAME">NAME:</label>
+            <input type="TEXT" id="name"><br> <br>
+            <label for="GENDER">GENDER:</label>
+            <select id="gender" Name="gender">
+                <option value="male">MALE</option>
+                <option value="female">FEMALE</option>
+                <option value="other">OTHER</option>
+            </select> <br> <br>
+            <label for="E-MAIL">E-MAIL:</label>
+            <input type="address" id="E-MAIL:"><br> <br>
+            <label for="address">ADDRESS:</label>
+            <input type="text" id="txt">
+            <button>SUBMIT</button>
+        </form>
+
+    </fieldset>
+    <form action="kk.html">
+        <button>GO BACK TO HOME</button>
+    </form>
+</main>
+</body>
+
+</html>
+
+
