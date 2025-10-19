@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flipkart</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background-color: #f1f3f6;
+    }
+    .navbar {
+
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      flex-wrap: wrap;
+      color: black;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      flex: 1;
+    }
+    .logo img {
+      width: 100px;
+      margin-right: 10px;
+    }
+    .plus {
+      font-size: 12px;
+    }
+    .plus span {
+      color: gold;
+    }
+    .search-box {
+      display: flex;
+      background-color: white;
+      border-radius: 4px;
+      overflow: hidden;
+      flex: 2;
+      margin: 10px;
+      min-width: 250px;
+    }
+    .search-box input {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      outline: none;
+      font-size: 14px;
+    }
+    .search-box button {
+      background-color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex: 1;
+      justify-content: flex-end;
+      color: black;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 14px;
+      color: black;
+    }
+    .nav-links i {
+      font-size: 18px;
+    }
+    .categories {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      background-color: white;
+      padding: 15px 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .category {
+      text-align: center;
+      cursor: pointer;
+      flex: 1 1 90px;
+      margin: 10px 5px;
+    }
+    .category i {
+      font-size: 28px;
+    }
+    .category p {
+      margin-top: 5px;
+      font-size: 13px;
+      color: #333;
+    }
+    .h1 {
+      font-size: 27px;
+    }
+    h2 {
+      text-align: center;
+      font-size: 28px;
+      color: #222;
+      margin-bottom: 25px;
+    }
+
+    .product-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      scroll-behavior: smooth;
+      padding: 10px;
+    }
+    .product-card {
+      flex: 0 0 auto;
+      width: 200px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 10px;
+    }
+    .product-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+    .product-card h3 {
+      font-size: 16px;
+      margin: 10px 0 5px;
+      color: #1a1313;
+    }
+    .product-card p {
+      font-size: 15px;
+      font-weight: bold;
+      color: #0a0c0e;
+    }
+    .three {
+      display: flex;
+      flex: 0 0 auto;
+      width: 200px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+      gap: 20px;
+      padding: 10px;
+      justify-content: space-between;
+    }
+    .offer img {
+      width: 100%;
+      border: none;
+      display: block;
+    }
+    .container {
+      display: flex;
+      padding: 20px;
+      gap: 20px;
+    }
+    .left-section,
+    .right-banner {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .left-section {
+      flex: 3;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .category {
+      width: calc(50% - 10px);
+    }
+
+    .category h2 {
+      margin-bottom: 10px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .product-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .product-card img {
+      max-width: 100%;
+      height: 120px;
+      object-fit: contain;
+    }
+
+    .product-title {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .discount {
+      color: green;
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    .right-banner {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .right-banner img {
+      width: 100%;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+
+    .shop-now-btn {
+      background-color: #2c4b63;
+      color: white;
+      padding: 10px 20px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .brand {
+      font-size: small;
+      color: gray;
+      ;
+    }
+
+    .footer {
+      background-color: #212121;
+      color: #fff;
+      width: 100%;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 40px 80px;
+      border-bottom: 1px solid #444;
+    }
+
+    .footer-column {
+      width: 20%;
+      min-width: 200px;
+    }
+
+    .footer-column h4 {
+      color: #878787;
+      margin-bottom: 15px;
+      font-size: 14px;
+    }
+
+    .footer-column a {
+      display: block;
+      text-decoration: none;
+      color: #fff;
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+
+    .footer-column a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-column p {
+      font-size: 13px;
+      line-height: 1.6;
+      color: #ddd;
+    }
+
+    .bottom-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      font-size: 13px;
+      color: #ccc;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .logo {
+        justify-content: center;
+        margin-bottom: 10px;
+      }
+
+      .nav-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+
+      .search-box {
+        width: 90%;
+        margin: 0 auto 10px;
+      }
+
+      .categories {
+        width: 90%;
+        margin: 0 auto 10px;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .a {
+        align-items: center;
+        width: 550px;
+      }
+
+      .product-container {
+        display: block;
+        align-items: center;
+        flex-wrap: wrap;
+        gap:10px;
+       
+       
+      }
+      .product-card{
+        display: block;
+        align-items: center;
+       flex-wrap: wrap;
+      
+      }
+
+      .three {
+         display: block;
+        align-items: center;
+        justify-content: center;
+       
+      }
+      .one{
+       display: block;
+        align-items: center;
+        justify-content: center;  
+      }
+      .two{
+         display: block;
+        align-items: center;
+        justify-content: center;
+      }
+      .three{
+         display: block;
+        align-items: center;
+        justify-content: center;
+      }
+
+     
+      .right-banner{
+        display: block;
+      }
+
+      .footer-top,
+      .footer-address {
+        flex-direction: column;
+        padding: 20px 40px;
+      }
+      .brand{
+        flex-direction: column;
+        text-align: left;
+      }
+      .footer-col,
+      .address-box {
+        width: 100%;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+  
+    }
+
+    @media (max-width: 480px) {
+      .nav-links a span {
+        display: none;
+      }
+
+      .nav-links a i {
+        font-size: 20px;
+      }
+
+      .a {
+        align-items: center;
+        width: 550px;
+      }
+
+       .product-container {
+        display: block;
+        align-items: center;
+        flex-wrap: wrap;
+        gap:10px;
+        justify-content: flex-end;
+       
+      }
+      .product-card{
+        display: block;
+        align-items: center;
+       flex-wrap: wrap;
+       width: 150px;
+       height: auto;
+       justify-content: flex-end;
+        
+      }
+
+      .three {
+         display: block;
+        align-items: center;
+        justify-content: center;
+        
+      }
+
+     
+      .right-banner{
+        display: block;
+      }
+
+      .footer-top,
+      .footer-address {
+        flex-direction: column;
+        padding: 20px 40px;
+      }
+      .brand{
+        flex-direction: column;
+        text-align: left;
+      }
+      .footer-col,
+      .address-box {
+        width: 100%;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+      .one{
+       display: block;
+        align-items: center;
+        justify-content: center;  
+      }
+      .two{
+         display: block;
+        align-items: center;
+        justify-content: center;
+      }
+      .three{
+         display: block;
+        align-items: center;
+        justify-content: center;
+      }
+
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="logo">
+     
+     
+      <img src=https://tse2.mm.bing.net/th/id/OIP.idB_-eo5pNgOG8Ker3jEpgHaEK?pid=Api&P=0&h=180>
+    </div>
+
+    <div class="search-box">
+      <input type="text" placeholder="Search for Products, Brands and More">
+      <button><i class="bi bi-search"></i></button>
+    </div>
+
+    <div class="nav-links">
+      <a href="#"><i class="bi bi-person-circle"></i> <span>Login</span></a>
+      <a href="#"><i class="bi bi-cart"></i> <span>Cart</span></a>
+      <a href="#"><i class="bi bi-shop"></i> <span>Become a Seller</span></a>
+      <i class="bi bi-three-dots-vertical"></i>
+    </div>
+  </nav>
+
+  <div class="categories">
+    <div class="category">
+      <i class="bi bi-stopwatch"></i>
+      <p>Minutes</p>
+    </div>
+    <div class="category">
+      <i class="bi bi-phone"></i>
+      <p>Mobiles</p>
+    </div>
+    <div class="category">
+      <i class="bi bi-tv"></i>
+      <p>TVs & Appliances</p>
+    </div>
+    <div class="category">
+      <i class="bi bi-cpu"></i>
+      <p>Electronics</p>
+    </div>
+    <div class="category">
+      <i class="bi bi-person-bounding-box"></i>
+      <p>Fashion</p>
+    </div>
+    <div class="category">
+      <i class="bi bi-house-door"></i>
+      <p>Home & Kitchen</p>
+    </div>
+    <div class="category">
+      <i class="bi bi-heart"></i>
+      <p>Beauty & Toys</p>
+    </div>
+
+    <div class="category">
+      <i class="bi bi-airplane"></i>
+      <p>Flight Bookings</p>
+    </div>
+    <div class="category">
+      <i class="bi bi-basket"></i>
+      <p>Grocery</p>
+    </div>
+  </div><br> <br>
+  <img class="a" src="https://rukminim1.flixcart.com/fk-p-flap/3240/540/image/104341249fe40f1d.jpg?q=60"
+    width="1700px"><br> <Br>
+  <h1>Best deals on smartphones</h1> <br> <br>
+
+
+  <div class="product-container">
+
+    <div class="product-card">
+      <img src="https://rukminim1.flixcart.com/image/240/240/xif0q/mobile/h/q/k/-original-imahfw4vamrf5xhf.jpeg?q=60"
+        alt="Oppo K13x 5G">
+      <h3>Oppo K13x 5G</h3>
+      <p>From ₹90,000</p>
+    </div>
+
+    <div class="product-card">
+      <img src="https://rukminim1.flixcart.com/image/240/240/xif0q/mobile/y/w/k/-original-imahfvpcn3j8qwzk.jpeg?q=60"
+        alt="Moto Edge 60 Pro 5G">
+      <h3>Moto Edge 60 Pro 5G</h3>
+      <p>From ₹24,500</p>
+    </div>
+
+    <div class="product-card">
+      <img src=https://rukminim2.flixcart.com/image/240/240/xif0q/mobile/l/x/1/-original-imahdv5ttyhhyhg9.jpeg?q=60
+        alt="Realme 5G">
+      <h3>Realme 5G</h3>
+      <p>From ₹14,999</p>
+    </div>
+
+    <div class="product-card">
+      <img src="https://rukminim1.flixcart.com/image/240/240/xif0q/mobile/r/4/p/-original-imahf47e6gzt3ggw.jpeg?q=60"
+        alt="Realme 5G Pro">
+      <h3>Realme 5G Pro</h3>
+      <p>From ₹20,000</p>
+    </div>
+
+    <div class="product-card">
+      <img src="https://rukminim1.flixcart.com/image/240/240/xif0q/mobile/h/q/k/-original-imahfw4vamrf5xhf.jpeg?q=60">
+      <h3>Moto G64 5G</h3>
+      <p>From ₹14,999</p>
+    </div>
+    <div class="product-card">
+      <img src="https://rukminim1.flixcart.com/image/240/240/xif0q/mobile/r/4/p/-original-imahf47e6gzt3ggw.jpeg?q=60"
+        alt="Moto G64 5G">
+      <h3>Moto G64 5G</h3>
+      <p>From ₹14,999</p>
+    </div>
+    <div class="product-card">
+      <img src="https://rukminim2.flixcart.com/fk-p-flap/1060/1620/image/2aaac51c767389aa.jpeg?q=60">
+
+    </div>
+
+  </div>
+  <br> <br> <br>
+  <div class="three">
+    <div class="threeone">
+      <img src="https://rukminim1.flixcart.com/fk-p-flap/1040/560/image/412e543c7d560972.png?q=60" width="500px"
+        height="300px">
+    </div>
+    <div class="threetwo">
+      <img src=https://rukminim1.flixcart.com/fk-p-flap/1040/560/image/45b2b3693ae24363.jpg?q=60 width="500px"
+        height="300px">
+
+    </div>
+    <div class="threethree">
+      <img src=https://rukminim1.flixcart.com/fk-p-flap/1040/560/image/087951e0b3ef8e78.jpg?q=60 width="500px"
+        height="300px">
+    </div>
+  </div>
+  <br> <br>
+  <div class="three">
+    <div class="threeone">
+      <img src=https://rukminim1.flixcart.com/fk-p-flap/1040/560/image/374dbdefbdad2956.jpg?q=60 width="500px"
+        height="300px">
+    </div>
+    <div class="threetwo">
+      <img src=https://rukminim1.flixcart.com/fk-p-flap/1040/560/image/0d79b88d86bcbf6d.jpg?q=60 width="500px"
+        height="300px">
+
+    </div>
+    <div class="threethree">
+      <img src=https://rukminim1.flixcart.com/fk-p-flap/1040/560/image/f212b7c9c821688a.jpg?q=60 width="500px"
+        height="300px">
+    </div>
+  </div>
+  <h1>Top deals on applicances</h1>
+  <br> <br>
+  <div class="product-container">
+
+    <div class="product-card">
+      <img
+        src=https://rukminim1.flixcart.com/image/240/240/xif0q/washing-machine-new/u/9/m/-original-imahap4cqzfyh7hw.jpeg?q=60>
+      <h3>Trending Deals</h3>
+      <p>Shop now</p>
+    </div>
+
+    <div class="product-card">
+      <img
+        src=https://rukminim1.flixcart.com/image/240/240/xif0q/water-purifier/q/d/w/m2-needs-no-service-for-2-years-10-stage-filtration-native-by-original-imah2usukstmh2ru.jpeg?q=60>
+      <h3>Kitchen essentials</h3>
+      <p>From 999</p>
+    </div>
+
+    <div class="product-card">
+      <img src=https://rukminim1.flixcart.com/image/240/240/xif0q/mobile/r/4/p/-original-imahf47e6gzt3ggw.jpeg?q=60
+        alt="Realme 5G">
+      <h3>Home essentials</h3>
+      <p>Shop now!</p>
+    </div>
+
+    <div class="product-card">
+      <img
+        src=https://rukminim1.flixcart.com/image/240/240/xif0q/water-geyser/j/x/y/-original-imagrty2vtc9gruj.jpeg?q=60>
+      <h3>Fans and geysers</h3>
+      <p>From 799</p>
+    </div>
+
+    <div class="product-card">
+      <img
+        src="https://rukminim1.flixcart.com/image/240/240/xif0q/mixer-grinder-juicer/i/0/m/-original-imaghy69gbrjwkvz.jpeg?q=60"
+        alt="Moto G64 5G">
+      <h3>Kitchen essentials</h3>
+      <p>From 1,999</p>
+    </div>
+    <div class="product-card">
+      <img src=https://rukminim1.flixcart.com/image/240/240/xif0q/television/n/j/0/-original-imahcsfhhbnpzt5z.jpeg?q=60>
+      <h3>Best selling TV</h3>
+      <p>From 14,999</p>
+    </div>
+    <div class="product-card">
+
+      <img
+        src=https://rukminim1.flixcart.com/image/240/240/xif0q/refrigerator-new/s/s/p/-original-imahg4zjyhgzeytr.jpeg?q=60>
+      <h3>Best selling Fridge</h3>
+      <p>From 10,999</p>
+    </div>
+
+  </div>
+  <div class="three">
+    <div class="threeone">
+      <img src=https://rukminim1.flixcart.com/fk-p-flap/1600/660/image/48120b31c2b1a087.jpg?q=60 width="500px"
+        height="300px">
+    </div>
+    <div class="threetwo">
+      <img src="https://rukminim1.flixcart.com/fk-p-flap/1600/660/image/3da9b84f109918a1.jpg?q=60" width="500px"
+        height="300px">
+
+    </div>
+    <div class="threethree">
+      <img src=https://rukminim1.flixcart.com/fk-p-flap/1600/660/image/3da9b84f109918a1.jpg?q=60 width="500px"
+        height="300px">
+    </div>
+  </div>
+  <div class="container">
+    
+    <div class="left-section">
+
+      <div class="category">
+        <h2>Best Value Deals on Fashion</h2>
+        <div class="product-grid">
+          <div class="product-card">
+            <img
+              src=https://rukminim1.flixcart.com/image/420/420/xif0q/headphone/3/c/f/new-edition-tws-m19-gaming-earbuds-bluetooth-5-0-wireless-led-original-imah96zwnpzh4gu7.jpeg?q=60
+              alt="True Wireless">
+            <div class="product-title">True Wireless</div>
+            <div class="discount">Min. 50% Off</div>
+          </div>
+          <div class="product-card">
+            <img src=https://rukminim1.flixcart.com/image/420/420/xif0q/shoe/i/6/o/-original-imahd2zfy7xuk8nn.jpeg?q=60
+              alt="Men's Casual Shoes">
+            <div class="product-title">Men’s Casual Shoes</div>
+            <div class="discount">Min. 70% Off</div>
+          </div>
+          <div class="product-card">
+            <img
+              src=https://rukminim1.flixcart.com/image/420/420/xif0q/watch/c/e/4/1-waterproof-sports-square-electronic-led-mahi-trendz-boys-original-imahdjdggag838pz.jpeg?q=60
+              alt="Wrist Watch">
+            <div class="product-title">Wrist Watches</div>
+            <div class="discount">Min. 50% Off</div>
+          </div>
+          <div class="product-card">
+            <img
+              src=https://rukminim1.flixcart.com/image/420/420/kchzhjk0/slipper-flip-flop/o/z/w/10-baba011-jasvi-black-original-imafthwfbfapsmjk.jpeg?q=60
+              alt="Slippers">
+            <div class="product-title">Men’s Slippers</div>
+            <div class="discount">Min. 50% Off</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <h2>Festive Home Delights</h2>
+        <div class="product-grid">
+          <div class="product-card">
+            <img
+              src=https://rukminim1.flixcart.com/image/420/420/xif0q/shopsy-mat/8/u/8/medium-grass-door-mat-2-043-asb-original-imahdtggsnffn4ag.jpeg?q=60
+              alt="Floor Coverings">
+            <div class="product-title">Floor Coverings</div>
+            <div class="discount">Min. 50% Off</div>
+          </div>
+          <div class="product-card">
+            <img src=https://rukminim1.flixcart.com/image/420/420/xif0q/bulb/c/j/e/-original-imahfjg7ugshebnq.jpeg?q=60
+              alt="Bulbs">
+            <div class="product-title">Bulbs</div>
+            <div class="discount">Min. 50% Off</div>
+          </div>
+          <div class="product-card">
+            <img
+              src=https://rukminim1.flixcart.com/image/420/420/xif0q/rice-light/i/w/y/40-bulb-11-5-11m-40l-multicolor-power-pixel-mprow-original-imahbwjqwksy8k98.jpeg?q=60
+              alt="Rice Lights">
+            <div class="product-title">Rice Lights</div>
+            <div class="discount">Min. 50% Off</div>
+          </div>
+          <div class="product-card">
+            <img
+              src=https://rukminim1.flixcart.com/image/420/420/xif0q/bedsheet/8/u/h/-original-imahept2yknjrmkc.jpeg?q=60
+              alt="Bedsheets">
+            <div class="product-title">Bedsheets</div>
+            <div class="discount">Min. 50% Off</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="right-banner">
+      <h2>Shop your fashion Needs</h2>
+
+      <img
+        src=https://rukminim1.flixcart.com/www/1060/1460/promos/26/09/2023/6c3c5fe2-c236-4fa2-8d97-595e1e01da01.jpg?q=60
+        alt="Fashion Banner" height="400px">
+    </div>
+  </div>
+  <h3>Featured Brands</h3>
+
+  <div class="three">
+    <div class="threeone">
+      <img src=https://rukminim1.flixcart.com/fk-p-flap/900/560/image/035f4ee911fb9824.jpeg?q=60 width="500px"
+        height="300px" gap="20px">
+    </div>
+    <div class="threetwo">
+      <img src=https://rukminim1.flixcart.com/fk-p-flap/900/560/image/e0ecf98a72acae7a.jpeg?q=60 width="500px"
+        height="300px" gap="20px">
+
+    </div>
+
+    <div class="threethree">
+      <img src="https://rukminim1.flixcart.com/fk-p-flap/1040/560/image/412e543c7d560972.png?q=60" width="500px"
+        height="300px">
+    </div>
+  </div>
+  <br> <br>
+  <div class="three">
+    <div class="threeone">
+      <img src=https://rukminim1.flixcart.com/fk-p-flap/1040/560/image/b8fba73c7e59df29.jpg?q=60 width="500px"
+        height="300px">
+    </div>
+    <div class="threetwo">
+      <img src=https://rukminim1.flixcart.com/fk-p-flap/1040/560/image/2c4e1f8fba239837.jpg?q=60 width="500px"
+        height="300px">
+
+    </div>
+    <div class="threethree">
+      <img src=https://rukminim1.flixcart.com/fk-p-flap/1040/560/image/f016af1fde9b4e8d.png?q=60 width="500px"
+        height="300px">
+    </div>
+  </div>
+  <br> <br>
+  <h1>Price drop on electronics</h1> <br> <br>
+
+
+  <div class="product-container">
+
+    <div class="product-card">
+      <img
+        src=https://rukminim1.flixcart.com/image/240/240/xif0q/cooling-pad/z/h/d/fksbcpk17-flipkart-smartbuy-original-imagrpra6uudn8xx.jpeg?q=60
+        alt="Oppo K13x 5G">
+      <h3>Cooling pads</h3>
+      <p>From 5999</p>
+    </div>
+
+    <div class="product-card">
+      <img
+        src=https://rukminim1.flixcart.com/image/240/240/kzzw5u80/keyboard/multi-device-keyboard/o/2/d/km3322w-km3322w-keyboard-mouse-combo-anti-fade-spill-resistant-original-imagbvyatqteauf2.jpeg?q=60>
+      <h3>Top Rated keyboards</h3>
+      <p>From 450</p>
+    </div>
+
+    <div class="product-card">
+      <img
+        src=https://rukminim1.flixcart.com/image/240/240/xif0q/cases-covers/flip-cover/d/f/a/recoilcases9feblk-proelite-original-imahggskgh7hbmtd.jpeg?q=60
+        alt="Realme 5G">
+      <h3>Tablets Cases and Cover</h3>
+      <p>From 499</p>
+    </div>
+
+    <div class="product-card">
+      <img src=https://rukminim1.flixcart.com/image/240/240/xif0q/smartwatch/s/d/n/-original-imahcc49mx4png6v.jpeg?q=60
+        alt="Realme 5G Pro">
+      <h3>Watch</h3>
+      <p>From 200</p>
+    </div>
+
+    <div class="product-card">
+      <img src=https://rukminim1.flixcart.com/image/240/240/xif0q/smartwatch/f/5/x/-original-imah4fnggqupasyh.jpeg?q=60>
+      <h3>Smart Watch</h3>
+      <p>From 2099</p>
+    </div>
+    <div class="product-card">
+      <img
+        src=https://rukminim1.flixcart.com/image/240/240/xif0q/epilator/y/k/j/7-silk-pil-3-031-epilator-for-long-lasting-hair-removal-from-original-imahag9thpgffqub.jpeg?q=60
+        alt="Moto G64 5G">
+      <h3>Women epilators</h3>
+      <p>From 4,999</p>
+    </div>
+    <div class="product-card">
+      <img
+        src=https://rukminim1.flixcart.com/image/240/240/xif0q/bp-monitor/r/k/v/usa-atrial-fibrillation-automatic-dual-talking-digital-blood-original-imahfr6ymtuwd87d.jpeg?q=60>
+      <h3>Women epilators</h3>
+      <p>From 399</p>
+    </div>
+
+  </div>
+  <div class="three">
+    <div class="threeone">
+      <img src=https://rukminim1.flixcart.com/fk-p-flap/1040/560/image/8d67e4c4315a6a85.jpg?q=60 width="500px"
+        height="300px">
+    </div>
+    <div class="threetwo">
+      <img src=https://rukminim1.flixcart.com/fk-p-flap/1040/560/image/fe7b2332e77c22bf.jpg?q=60 width="500px"
+        height="300px">
+
+    </div>
+    <div class="threethree">
+      <img src=https://rukminim1.flixcart.com/fk-p-flap/1040/560/image/7a7bbda7ef7d6dbe.jpg?q=60 width="500px"
+        height="300px">
+    </div>
+  </div>
+  <br> <br>
+  <div class="container">
+   
+    <div class="left-section">
+
+      <div class="category">
+        <h2>Best Value Deals on Fashion</h2>
+        <div class="product-grid">
+          <div class="product-card">
+            <img
+              src=https://rukminim1.flixcart.com/image/420/420/xif0q/shoe/l/f/y/10-trm2542-10-0-trm-black-original-imahf438dpg2w8y7.jpeg?q=60
+              alt="True Wireless">
+            <div class="product-title">True Wireless</div>
+            <div class="discount">Min. 50% Off</div>
+          </div>
+          <div class="product-card">
+            <img
+              src=https://rukminim1.flixcart.com/image/420/420/xif0q/backpack/0/q/f/10-medium-30-l-laptop-backpack-8-b04-skf-laptop-backpack-skyfa-original-imagt4b6yqdywreg.jpeg?q=60>
+            <div class="product-title">Men’s Casual Shoes</div>
+            <div class="discount">Min. 70% Off</div>
+          </div>
+          <div class="product-card">
+            <img
+              src=https://rukminim2.flixcart.com/image/612/612/xif0q/slipper-flip-flop/c/q/7/7-mrj1634-aadi-red-original-imagfsw2ymksemzq-bb.jpeg?q=70
+              alt="Wrist Watch">
+            <div class="product-title">Wrist Watches</div>
+            <div class="discount">Min. 50% Off</div>
+          </div>
+          <div class="product-card">
+            <img
+              src=https://rukminim1.flixcart.com/image/420/420/xif0q/shirt/g/j/w/xl-kcsh-mm-110-bk-fubar-original-imah4zemvjfvhtrg.jpeg?q=60
+              alt="Slippers">
+            <div class="product-title">Men’s Slippers</div>
+            <div class="discount">Min. 50% Off</div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+
+    <div class="right-banner">
+
+
+      <img
+        src=https://rukminim1.flixcart.com/www/2140/1460/promos/26/09/2023/ed27f892-1bc6-462f-805b-953f5add4f6a.jpg?q=60
+        alt="Fashion Banner" height="500px" width="700px">
+    </div>
+  </div>
+  <div class="three">
+    <div class="threeone">
+      <img src=https://rukminim1.flixcart.com/fk-p-flap/1040/560/image/f2c6f2c1750b9a78.jpg?q=60 width="500px"
+        height="300px">
+    </div>
+    <div class="threetwo">
+      <img src=https://rukminim1.flixcart.com/fk-p-flap/1040/560/image/9a501b6bbc63733e.jpg?q=60 width="500px"
+        height="300px">
+
+    </div>
+    <div class="threethree">
+      <img src=https://rukminim1.flixcart.com/fk-p-flap/1040/560/image/79747f023d030018.jpg?q=60 width="500px"
+        height="300px">
+    </div>
+  </div>
+  <br> <br>
+  <div class="three">
+    <div class="threeone">
+      <img src=https://rukminim1.flixcart.com/fk-p-flap/900/560/image/f37b8584f8e013dc.jpeg?q=60 width="500px"
+        height="300px" gap="20px">
+    </div>
+    <div class="threetwo">
+      <img src=https://rukminim1.flixcart.com/fk-p-flap/900/560/image/d6b47fba9b0b0a5d.jpeg?q=60 width="500px"
+        height="300px" gap="20px">
+
+    </div>
+
+    <div class="threethree">
+      <img src=https://rukminim1.flixcart.com/fk-p-flap/900/560/image/2004855e88fd72c5.jpeg?q=60 width="500px"
+        height="300px">
+    </div>
+  </div>
+  <br> <br>
+  <h3>Top deals on home applicances</h3>
+  <div class="product-container">
+
+    <div class="product-card">
+      <img
+        src=https://rukminim2.flixcart.com/image/612/612/xif0q/energy-sport-drink-mix/f/t/g/-original-imagsph6rqfrt6d4.jpeg?q=70>
+      <h3>Energy Drinks</h3>
+      <p>From 399</p>
+    </div>
+
+    <div class="product-card">
+      <img
+        src=https://rukminim2.flixcart.com/image/612/612/xif0q/shelf-bracket/b/y/e/heavy-duty-folding-shelf-brackets-wall-mounted-space-saver-table-original-imah3ez57xs8qymh.jpeg?q=70>
+      <h3>Drilling equipments</h3>
+      <p>From 450</p>
+    </div>
+
+    <div class="product-card">
+      <img
+        src=https://rukminim1.flixcart.com/image/240/240/kx7vc7k0/acoustic-guitar/b/5/h/b-38c-redburst-blueberry-original-imag9qbehsruhqen.jpeg?q=60
+        alt="Realme 5G">
+      <h3>Musical Instruments</h3>
+      <p>From 499</p>
+    </div>
+
+    <div class="product-card">
+      <img src=https://rukminim1.flixcart.com/image/240/240/xif0q/smartwatch/s/d/n/-original-imahcc49mx4png6v.jpeg?q=60
+        alt="Realme 5G Pro">
+      <h3>Watch</h3>
+      <p>From 200</p>
+    </div>
+
+    <div class="product-card">
+      <img src=https://rukminim1.flixcart.com/image/240/240/xif0q/smartwatch/f/5/x/-original-imah4fnggqupasyh.jpeg?q=60>
+      <h3>Smart Watch</h3>
+      <p>From 2099</p>
+    </div>
+    <div class="product-card">
+      <img
+        src=https://rukminim1.flixcart.com/image/240/240/xif0q/cycle/6/z/m/beast-24t-with-front-suspension-and-disc-brake-and-complete-original-imagvz8yyy8gyzxg.jpeg?q=60
+        alt="Moto G64 5G">
+      <h3>Cycles</h3>
+      <p>From 4,999</p>
+    </div>
+    <div class="product-card">
+      <img src=https://rukminim1.flixcart.com/image/240/240/xif0q/bath-towel/b/l/j/-original-imahfyxcpzz9nc8c.jpeg?q=60
+        alt="Moto G64 5G">
+      <h3>Bathroom essentials</h3>
+      <p>From 999</p>
+    </div>
+
+  </div>
+  <br> <br>
+
+  <div class="three">
+    <div class="threeone">
+      <img src=https://rukminim1.flixcart.com/fk-p-flap/1040/560/image/f2c6f2c1750b9a78.jpg?q=60 width="500px"
+        height="300px">
+    </div>
+    <div class="threetwo">
+      <img src=https://rukminim1.flixcart.com/fk-p-flap/1040/560/image/9a501b6bbc63733e.jpg?q=60 width="500px"
+        height="300px">
+
+    </div>
+    <div class="threethree">
+      <img src=https://rukminim1.flixcart.com/fk-p-flap/1040/560/image/79747f023d030018.jpg?q=60 width="500px"
+        height="300px">
+    </div>
+  </div>
+  <br> <br>
+
+  <div class="three">
+    <div class="threeone">
+      <img src=https://rukminim2.flixcart.com/fk-p-flap/1040/560/image/b778cf90dbe450b4.jpg?q=60 width="500px"
+        height="300px">
+    </div>
+    <div class="threetwo">
+      <img src=https://rukminim2.flixcart.com/fk-p-flap/1040/560/image/7e20e26949693491.jpg?q=60 width="500px"
+        height="300px">
+
+    </div>
+    <div class="threethree">
+      <img src=https://rukminim2.flixcart.com/fk-p-flap/1040/560/image/24a9d12cf653b1d2.jpg?q=60 width="500px"
+        height="300px">
+    </div>
+  </div>
+  <br> <br>
+
+  <div class="three">
+    <div class="threeone">
+      <img src=https://rukminim2.flixcart.com/fk-p-flap/1040/560/image/7a899771145a978c.png?q=60 width="500px"
+        height="300px">
+    </div>
+    <div class="threetwo">
+      <img src=https://rukminim2.flixcart.com/fk-p-flap/1040/560/image/2ffa536ee31398b3.png?q=60 width="500px"
+        height="300px">
+
+    </div>
+    <div class="threethree">
+      <img src=https://rukminim2.flixcart.com/fk-p-flap/1040/560/image/f3ba097b08f172df.jpg?q=60 width="500px"
+        height="300px">
+    </div>
+  </div>
+
+  <h3>Top Stories : Brand Directory</h3> <br>
+  <div class="brand">
+
+
+    <strong>MOST SEARCHED FOR ON FLIPKART:</strong> <br> <br>
+
+    <h4>Big Festive Diwali Sale | iPhone 17 | Google Pixel 10 | Durga Puja Sale | Infinix GT 30 5g+ | Samsung Galaxy Z
+      Flip7 5G | Gogle pixel | Google pixel 10 | Google pixel Pro | oppo | iPhone 17 | Google
+    </h4>
+    <strong>MOBILES</strong>
+    <h4>Infinix SMART 10 | OPPO Reno 14 Pro | Motorola g64 5G | Realme 12+ 5G | Samsung Galaxy S25 Ultra | Redmi Note 14
+      5G | iPhone 17 Pro | Vivo V30 5G | OnePlus Nord CE 3 Lite 5G | POCO X7
+    </h4>
+    <strong>CAMERA</strong>
+
+    <h4>GoPro Action Camera</a>
+      <h4>Nikon Camera</a>
+
+        <h4>GoPro Action Camera | Nikon D3500 | Canon EOS 1500D | Sony Alpha ZV-E10 | Canon DSLR | Nikon DSLR | Fujifilm
+          Instax Mini | Panasonic Lumix G7 | Sony CyberShot | Canon PowerShot
+        </h4>
+
+
+        <strong>TVS</strong>
+        <h4>Samsung TV | LG TV | Sony Bravia TV | Mi TV | OnePlus TV | TCL Smart TV | Panasonic LED TV | Realme Smart TV
+          | Redmi Smart TV | Infinix Y1 TV
+        </h4>
+
+
+        <strong>LARGE APPLIANCES</strong>
+        <h4>
+          Whirlpool Refrigerator | Samsung Double Door Fridge | LG Washing Machine | IFB Front Load Washing Machine |
+          Bosch Dishwasher | Voltas Beko Refrigerator | Haier Deep Freezer | Godrej Single Door Fridge | Panasonic Air
+          Conditioner | Blue Star Inverter AC
+
+        </h4>
+
+
+        <strong>CLOTHING</strong>
+        <h4>
+          Mens T-Shirts | Womens Sarees | Mens Jeans | Womens Kurtis | Kids Wear | Mens Formal Shirts | Womens Tops |
+          Winter Jackets | Et | Kurtis
+
+        </h4>
+
+
+        <strong>FOOTWEAR</strong>
+        <h4>
+          Mens Sneakers | Womens Heels | Sports Shoes | Casual Shoes | Formal Shoes | Womens Flats | Mens Sandals |
+          Womens Sandals | Running Shoes | Kids Footwear
+
+        </h4>
+        <strong>LAPTOPS:</strong>
+        <h4>
+          Apple MacBook Air M2 | Apple MacBook Pro M3 | HP Pavilion x360 | Dell Inspiron 15 | Lenovo IdeaPad Slim 5 |
+          Asus Vivobook 16X | Acer Aspire 7 | MSI Modern 14 | Asus ROG Strix G16 | HP Victus Gaming Laptop | Lenovo
+          Legion 5 Pro | Dell XPS 13 | Acer Nitro 5 | Asus TUF Gaming F15 | HP Envy x360 | Samsung Galaxy Book 4 |
+          Infinix InBook Y1 Plus | Realme Book Slim | Honor MagicBook X16 | LG Gram 17
+        </h4>
+
+        <strong>TVs:</strong>
+        <h4>
+          Samsung Crystal UHD 55" | LG OLED C2 65" | Sony Bravia X80K 50" | OnePlus Y Series 55" | Xiaomi Mi TV 4X 50" |
+          TCL QLED 55C725 | Panasonic HX600 50" | Philips 4K LED 55PUS | Hisense U7G 55" | Samsung QLED Q60B 65" | LG
+          NanoCell 55" | Sony Bravia A80K 65" | Mi TV Q1 75" | TCL P725 65" | OnePlus U1S 65" | Samsung Frame 55" | LG
+          UHD 43UP7750 | Philips 50PUS8506 | Sony X90K 55" | Panasonic JX850 55"
+        </h4>
+
+        <strong>MOBILES:</strong>
+        <h4>
+          Apple iPhone 17 | Apple iPhone 17 Pro | Samsung Galaxy S24 | Samsung Galaxy S24 Ultra | OnePlus 12 | OnePlus
+          12 Pro | Google Pixel 10 | Google Pixel 10 Pro | Xiaomi 14 | Xiaomi 14 Pro | Realme GT 5 | Realme GT Neo 6 |
+          Oppo Find X6 | Oppo Reno 12 | Vivo V29 | Vivo X90 Pro | Infinix Zero Ultra 5G | Tecno Phantom X3 | Samsung
+          Galaxy Z Flip7 5G | Motorola Edge 42
+        </h4>
+
+        <strong>LAPTOPS:</strong>
+        <h4>
+          Apple MacBook Air M2 | Apple MacBook Pro M3 | HP Pavilion x360 | Dell Inspiron 15 | Lenovo IdeaPad Slim 5 |
+          Asus Vivobook 16X | Acer Aspire 7 | MSI Modern 14 | Asus ROG Strix G16 | HP Victus Gaming Laptop | Lenovo
+          Legion 5 Pro | Dell XPS 13 | Acer Nitro 5 | Asus TUF Gaming F15 | HP Envy x360 | Samsung Galaxy Book 4 |
+          Infinix InBook Y1 Plus | Realme Book Slim | Honor MagicBook X16 | LG Gram 17
+        </h4>
+
+        <strong>TVs:</strong>
+        <h4>
+          Samsung Crystal UHD 55" | LG OLED C2 65" | Sony Bravia X80K 50" | OnePlus Y Series 55" | Xiaomi Mi TV 4X 50" |
+          TCL QLED 55C725 | Panasonic HX600 50" | Philips 4K LED 55PUS | Hisense U7G 55" | Samsung QLED Q60B 65" | LG
+          NanoCell 55" | Sony Bravia A80K 65" | Mi TV Q1 75" | TCL P725 65" | OnePlus U1S 65" | Samsung Frame 55" | LG
+          UHD 43UP7750 | Philips 50PUS8506 | Sony X90K 55" | Panasonic JX850 55"
+        </h4>
+
+        <strong>MOBILES:</strong>
+        <h4>
+          Apple iPhone 17 | Apple iPhone 17 Pro | Samsung Galaxy S24 | Samsung Galaxy S24 Ultra | OnePlus 12 | OnePlus
+          12 Pro | Google Pixel 10 | Google Pixel 10 Pro | Xiaomi 14 | Xiaomi 14 Pro | Realme GT 5 | Realme GT Neo 6 |
+          Oppo Find X6 | Oppo Reno 12 | Vivo V29 | Vivo X90 Pro | Infinix Zero Ultra 5G | Tecno Phantom X3 | Samsung
+          Galaxy Z Flip7 5G | Motorola Edge 42
+        </h4>
+
+  </div>
+  <br> <br>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h4>ABOUT</h4>
+        <a href="#">Contact Us</a>
+        <a href="#">About Us</a>
+        <a href="#">Careers</a>
+        <a href="#">Flipkart Stories</a>
+        <a href="#">Press</a>
+        <a href="#">Corporate Information</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>GROUP COMPANIES</h4>
+        <a href="#">Myntra</a>
+        <a href="#">Cleartrip</a>
+        <a href="#">Shopsy</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>HELP</h4>
+        <a href="#">Payments</a>
+        <a href="#">Shipping</a>
+        <a href="#">Cancellation & Returns</a>
+        <a href="#">FAQ</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>CONSUMER POLICY</h4>
+        <a href="#">Cancellation & Returns</a>
+        <a href="#">Terms Of Use</a>
+        <a href="#">Security</a>
+        <a href="#">Privacy</a>
+        <a href="#">Sitemap</a>
+        <a href="#">Grievance Redressal</a>
+        <a href="#">EPR Compliance</a>
+      </div>
+
+      <div class="footer-column">
+        <h4>Mail Us:</h4>
+        <p>Flipkart Internet Private Limited,<br>
+          Buildings Alyssa, Begonia &<br>
+          Clove Embassy Tech Village,<br>
+          Outer Ring Road, Devarabeesanahalli Village,<br>
+          Bengaluru, 560103,<br>
+          Karnataka, India</p>
+        <br>
+
+      </div>
+
+      <div class="bottom-bar">
+        <p>© 2007-2025 Flipkart.com</p>
+
+      </div>
+  </footer>
+</body>
+
+</html
